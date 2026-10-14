@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "systematic-review-meta-analysis-skills"
+version = "1.1.0"
+description = "Open-source skills for systematic reviews, PRISMA workflows, and meta-analysis (pairwise, DTA, network, meta-regression)."
+readme = "README.md"
+authors = [
+    { name = "Ritu Shah", email = "ritsushah@users.noreply.github.com" }
+]
+license = { text = "MIT" }
+keywords = [
+    "systematic-review",
+    "meta-analysis",
+    "prisma",
+    "prospero",
+    "diagnostic-accuracy",
+    "network-meta-analysis",
+    "epidemiology",
+    "cursor",
+    "claude-code",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "pyyaml>=6.0",
+    "click>=8.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/ritsushah/systematic-review-meta-analysis-skills"
+Documentation = "https://github.com/ritsushah/systematic-review-meta-analysis-skills/tree/main/docs"
+Repository = "https://github.com/ritsushah/systematic-review-meta-analysis-skills"
+
+[project.scripts]
+scan-skills = "scan_skills:main"
+
+[tool.setuptools]
+py-modules = ["scan_skills"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
